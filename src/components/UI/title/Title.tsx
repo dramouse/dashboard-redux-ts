@@ -5,6 +5,12 @@ import { useThemeClassName } from '../../../utils/hooks/useThemeClassName.hook'
 import { TitleOrder, UITitleProps } from './Title.interface'
 import sass from './Title.module.sass'
 
+/**
+ * Стандартный заголовок UI библиотеки
+ * @param {number} order - порядок заголовка
+ * @param {number} size - размер заголовка в пикселях
+ * @param {CSSProperties} style - свои css свойства
+ */
 const UITitle: FC<PropsWithChildren<UITitleProps>> = ({
   order = 3,
   style = {},

@@ -1,5 +1,29 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "kanban": [
+    {
+      "id": 123123,
+      "title": "sdfdsdfsdf",
+      "description": "sdscdfd",
+      "img": null,
+      "status": "pending",
+      "section": "backlog",
+      "created": "23-02-2022",
+      "done": "26-02-2022",
+      "creator": 11,
+      "executors": [11]
+    }
+  ],
+  "users": [
+    {
+      "id": 11,
+      "name": "kirill",
+      "surname": "roxman",
+      "status": "active",
+      "phone": "+79297564273",
+      "position": "React developer",
+      "department": "Отдел Web-разработки",
+      "activity": "25-02-2022 13:34",
+      "tasks": [123123]
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { AppTheme } from '../../store/theme/theme.slice'
+import { AppTheme } from '../../types/AppTheme.types'
 import { useAppTheme } from '../hooks/useAppTheme.hook'
 
 /**

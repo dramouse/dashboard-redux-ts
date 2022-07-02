@@ -1,5 +1,5 @@
 import { useAppSelector } from "../../store"
-import { AppTheme } from "../../store/theme/theme.slice"
+import { AppTheme } from "../../types/AppTheme.types"
 
 /**
  * хук для получения темы приложения

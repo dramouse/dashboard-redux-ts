@@ -6,7 +6,7 @@ import { useThemeClassName } from '../../../utils/hooks/useThemeClassName.hook'
 import { TEXT_FONT_SIZE } from '../../../utils/constants/style.constants'
 
 /**
- *
+ * Стандартный текст UI библиотеки
  * @param {number} size - font-size текста (16px по умолчанию)
  * @param {number} weight - font-weight текст (400 по умолчанию)
  * @param {CSSProperties} style - возможно прокинуть любые css стили

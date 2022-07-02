@@ -1,9 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-
-export enum AppTheme {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
+import { AppTheme } from '../../types/AppTheme.types'
 
 interface themeState {
   theme: AppTheme

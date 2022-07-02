@@ -6,9 +6,9 @@ import { useThemeClassName } from '../../../utils/hooks/useThemeClassName.hook'
 
 /**
  * Стандартная кнопка UI библиотеки
- * @param stretch - для растягивания кнопки на всю ширину контейнера
- * @param onClick - пробросить колбэк для события click
- * @param style - можно прокинуть инлайн стили
+ * @param {boolean} stretch - для растягивания кнопки на всю ширину контейнера
+ * @param {Function} onClick - пробросить колбэк для события click
+ * @param {CSSProperties} style - можно прокинуть инлайн стили
  */
 const UIButton: FC<PropsWithChildren<UIButtonProps>> = ({
   onClick,
