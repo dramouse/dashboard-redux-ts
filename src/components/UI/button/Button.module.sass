@@ -1,0 +1,21 @@
+@import '../../../sass/variables'
+  
+.button
+  padding: 5px 76px
+  font-size: $text-size
+  border-radius: 10px
+  font-weight: 500
+  cursor: pointer
+  transition: $transition-normal
+
+  &._light 
+    background-color: $colors-accent
+    color: $darkColors-text-button
+    &:hover
+      background-color: lighten($colors-accent, 5)
+
+  &._dark 
+    background-color: $darkColors-accent
+    color: $colors-text-button
+    &:hover
+      background-color: lighten($darkColors-accent, 5)
