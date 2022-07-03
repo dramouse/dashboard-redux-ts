@@ -1,10 +1,12 @@
 type TaskStatus = 'pending' | 'updates' | 'errors' | 'done'
 type TaskSection = 'backlog' | 'progress' | 'done'
 
+export const BASE_URL = 'http://localhost:3001'
+
 /**
  * Задача доски kanban
  */
-export interface KanbanTask {
+export interface IKanbanTask {
   id: string
   title: string
   description?: string
@@ -20,7 +22,7 @@ export interface KanbanTask {
 /**
  * Пользователь
  */
-export interface User {
+export interface IUser {
   id: string
   name: string
   surname: string
@@ -30,4 +32,14 @@ export interface User {
   department: string
   activity: string
   tasks: string[]
+}
+
+/**
+ * Уведомление
+ */
+export interface INotification {
+  id: string
+  text: string
+  closed: boolean
+  applyText?: string
 }

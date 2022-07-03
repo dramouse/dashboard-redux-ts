@@ -2,8 +2,8 @@ import classNames from 'classnames'
 import { CSSProperties, FC, PropsWithChildren } from 'react'
 import { UITextProps } from './Text.interface'
 import sass from './Text.module.sass'
-import { useThemeClassName } from '../../../utils/'
-import { TEXT_FONT_SIZE } from '../../../utils/constants/style.constants'
+import { useThemeClassName } from 'utils'
+import { TEXT_FONT_SIZE } from 'utils/constants/style.constants'
 
 /**
  * Стандартный текст UI библиотеки

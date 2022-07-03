@@ -4,13 +4,18 @@ import {
 } from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 import { FC } from 'react'
-import { useThemeClassName } from '../../../utils/'
+import { useThemeClassName } from 'utils'
 import sass from './Icon.module.sass'
 
 interface UIIConProps {
   active: boolean
 }
 
+/**
+ * Стандартная иконка UI библиотеки
+ * @param active - маркер активности иконки
+ * @returns 
+ */
 const UIIcon: FC<FontAwesomeIconProps & UIIConProps> = (props) => {
   // Для иконки из fontAwesome отсавляем только ее классические пропы,
   // убирая active

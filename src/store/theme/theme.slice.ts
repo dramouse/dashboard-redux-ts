@@ -15,8 +15,10 @@ const themeSlice = createSlice({
     toggleTheme: (state) => {
       if (state.theme === AppTheme.LIGHT) {
         state.theme = AppTheme.DARK
+        localStorage.setItem('theme', AppTheme.DARK)
       } else {
         state.theme = AppTheme.LIGHT
+        localStorage.setItem('theme', AppTheme.LIGHT)
       }
     },
   },

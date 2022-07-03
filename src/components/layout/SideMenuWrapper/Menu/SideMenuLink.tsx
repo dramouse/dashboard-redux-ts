@@ -2,9 +2,9 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import classNames from 'classnames'
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { useThemeClassName } from '../../../../utils/'
-import { UITitle } from '../../../UI'
-import UIIcon from '../../../UI/icon/Icon'
+import { useThemeClassName } from 'utils'
+import { UITitle } from 'components/UI'
+import UIIcon from 'components/UI/icon/Icon'
 import sass from './SideMenuLink.module.sass'
 
 export interface SideMenuLinkProps {

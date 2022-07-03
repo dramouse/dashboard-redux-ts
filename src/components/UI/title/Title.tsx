@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { CSSProperties, FC, PropsWithChildren } from 'react'
-import { TITLE_FONT_SIZE } from '../../../utils/constants/style.constants'
-import { useThemeClassName } from '../../../utils/'
+import { TITLE_FONT_SIZE } from 'utils/constants/style.constants'
+import { useThemeClassName } from 'utils'
 import { TitleOrder, UITitleProps } from './Title.interface'
 import sass from './Title.module.sass'
 

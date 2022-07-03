@@ -1,11 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import themeReducer from './theme/theme.slice'
+import notificationsReducer from './notifications/notifications.slice'
 
 export const store = configureStore({
-  reducer: { themeReducer },
+  reducer: { themeReducer, notificationsReducer },
   devTools: process.env.NODE_ENV !== 'production',
-  middleware: (defMW) => defMW()
+  middleware: (defMW) => defMW(),
 })
 
 export type AppDispatch = typeof store.dispatch

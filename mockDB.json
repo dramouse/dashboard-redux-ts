@@ -9,8 +9,9 @@
       "section": "backlog",
       "created": "23-02-2022",
       "done": "26-02-2022",
-      "creator": 11,
-      "executors": [11]
+      "executors": [
+        11
+      ]
     }
   ],
   "users": [
@@ -23,7 +24,22 @@
       "position": "React developer",
       "department": "Отдел Web-разработки",
       "activity": "25-02-2022 13:34",
-      "tasks": [123123]
+      "tasks": [
+        123123
+      ]
+    }
+  ],
+  "notifications": [
+    {
+      "id": "112jkqwdj",
+      "text": "Hello notification!",
+      "closed": false,
+      "applyText": "Hello!"
+    },
+    {
+      "id": "91fnc28yff",
+      "text": "Notification without apply text",
+      "closed": false
     }
   ]
 }

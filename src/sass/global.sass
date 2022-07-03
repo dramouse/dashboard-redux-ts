@@ -8,6 +8,28 @@
   outline: none
   transition: $transition-normal
 
+  // Кастомный скроллбар сразу на все элементы,
+  // тк такие элементы в приложении будут однотипные
+  &::-webkit-scrollbar 
+    width: 6px
+    max-height: 50%
+    height: 50%
+
+  &::-webkit-scrollbar-thumb
+    border-radius: 15px
+
+  &._light
+    &::-webkit-scrollbar-thumb
+      background-color: $colors-background-primary
+        
+  &._dark
+    &::-webkit-scrollbar-thumb
+      background-color: $darkColors-background-primary
+  
+  &::-webkit-scrollbar-track
+    max-height: 50%
+    height: 50%
+
 html
   font-family: 'DM Sans', sans-serif
   font-size: 16px

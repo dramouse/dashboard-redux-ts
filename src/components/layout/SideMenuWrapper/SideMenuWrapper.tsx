@@ -1,4 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
 import SideMenu from './Menu/SideMenu'
 import sass from './SideMenuWrapper.module.sass'
 
@@ -7,11 +9,11 @@ const SideMenuWrapper: FC<PropsWithChildren<{}>> = ({ children }) => {
     <div className={sass['side-wrapper']}>
       <SideMenu />
       <div className={sass['side-wrapper__page-content']}>
-        <header>header</header>
+       <Header />
         <div className={sass['side-wrapper__page-body']}>
           {children}
         </div>
-          <footer>footer</footer>
+         <Footer/>
       </div>
     </div>
   )
