@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import { CSSProperties, FC, PropsWithChildren } from 'react'
 import { TITLE_FONT_SIZE } from '../../../utils/constants/style.constants'
-import { useThemeClassName } from '../../../utils/hooks/useThemeClassName.hook'
+import { useThemeClassName } from '../../../utils/'
 import { TitleOrder, UITitleProps } from './Title.interface'
 import sass from './Title.module.sass'
 
@@ -15,6 +15,7 @@ const UITitle: FC<PropsWithChildren<UITitleProps>> = ({
   order = 3,
   style = {},
   size = TITLE_FONT_SIZE,
+  className = '',
   children,
 }) => {
   const themeClasses = useThemeClassName(sass['_light'], sass['_dark'])
@@ -28,7 +29,7 @@ const UITitle: FC<PropsWithChildren<UITitleProps>> = ({
       case 1:
         return (
           <h1
-            className={classNames(sass['title'], themeClasses)}
+            className={classNames(sass['title'], themeClasses, className)}
             style={inlineStyles}
           >
             {children}
@@ -37,7 +38,7 @@ const UITitle: FC<PropsWithChildren<UITitleProps>> = ({
       case 2:
         return (
           <h2
-            className={classNames(sass['title'], themeClasses)}
+            className={classNames(sass['title'], themeClasses, className)}
             style={inlineStyles}
           >
             {children}
@@ -46,7 +47,7 @@ const UITitle: FC<PropsWithChildren<UITitleProps>> = ({
       case 3:
         return (
           <h3
-            className={classNames(sass['title'], themeClasses)}
+            className={classNames(sass['title'], themeClasses, className)}
             style={inlineStyles}
           >
             {children}

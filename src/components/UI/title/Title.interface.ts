@@ -6,4 +6,5 @@ export interface UITitleProps {
   order?: TitleOrder
   size?: number
   style?: CSSProperties
+  className?: string
 }

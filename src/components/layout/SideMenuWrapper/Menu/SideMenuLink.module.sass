@@ -1,0 +1,35 @@
+@import '../../../../sass/variables'
+
+.menu-item
+  &:not(:last-child)
+    margin-bottom: 15px
+    
+
+.menu-link
+  display: flex
+  align-items: center
+  position: relative
+  padding: 5px 0
+
+  &::before
+    position: absolute
+    content: ''
+    top: 0
+    right: 0
+    height: 100%
+    width: 4px
+    border-radius: 25px
+    opacity: 0
+    transition: $transition-normal
+
+  &._light
+    &::before
+      background-color: $colors-accent
+
+  &._dark
+    &::before
+      background-color: $darkColors-accent
+    
+  &._active
+    &::before
+      opacity: 1

@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { CSSProperties, FC, PropsWithChildren } from 'react'
 import { UIButtonProps } from './Button.interface'
 import sass from './Button.module.sass'
-import { useThemeClassName } from '../../../utils/hooks/useThemeClassName.hook'
+import { useThemeClassName } from '../../../utils/'
 
 /**
  * Стандартная кнопка UI библиотеки

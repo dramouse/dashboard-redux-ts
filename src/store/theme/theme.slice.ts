@@ -5,7 +5,8 @@ interface themeState {
   theme: AppTheme
 }
 
-const initialState = {theme: AppTheme.LIGHT} as themeState
+const theme = localStorage.getItem('theme') || AppTheme.LIGHT
+const initialState = { theme } as themeState
 
 const themeSlice = createSlice({
   name: 'theme',
@@ -21,8 +22,8 @@ const themeSlice = createSlice({
   },
 })
 
-const {reducer: themeReducer, actions} = themeSlice
-const {toggleTheme} = actions
+const { reducer: themeReducer, actions } = themeSlice
+const { toggleTheme } = actions
 
-export {toggleTheme}
+export { toggleTheme }
 export default themeReducer

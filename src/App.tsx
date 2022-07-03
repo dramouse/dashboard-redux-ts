@@ -1,27 +1,23 @@
 import classNames from 'classnames'
 import { FC } from 'react'
-import UIButton from './components/UI/button/Button'
-import { useAppDispatch } from './store'
-import { toggleTheme } from './store/theme/theme.slice'
 import sass from './App.module.sass'
-import { useThemeClassName } from './utils/hooks/useThemeClassName.hook'
-import { UIText, UITitle } from './components/UI'
+import { useThemeClassName } from './utils/'
+import SideMenuWrapper from './components/layout/SideMenuWrapper/SideMenuWrapper'
+import { Route, Routes } from 'react-router-dom'
+import { UITitle } from './components/UI'
 
 const App: FC = () => {
-  const dispatch = useAppDispatch()
   const themeClasses = useThemeClassName(sass['_light'], sass['_dark'])
-
-  const changeTheme = () => {
-    dispatch(toggleTheme())
-  }
 
   return (
     <div className={classNames(sass['app'], themeClasses)}>
-      <UIButton onClick={changeTheme}>Привет</UIButton>
-      <UIText size={16}>Какой-то текст</UIText>
-      <UITitle order={1}>Какой-то заголовок первого порядка</UITitle>
-      <UITitle order={2}>Какой-то заголовой второго порядка</UITitle>
-      <UITitle>А тут по дефолту 3 ордер</UITitle>
+      <SideMenuWrapper>
+        <Routes>
+          <Route path='/kanban' element={<UITitle>kanban</UITitle>} />
+          <Route path='/dashboard' element={<UITitle>dashboard</UITitle>} />
+          <Route path='*' element={<UITitle>404</UITitle>} />
+        </Routes>
+      </SideMenuWrapper>
     </div>
   )
 }
