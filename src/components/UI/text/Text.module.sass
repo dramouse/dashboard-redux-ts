@@ -1,12 +1,5 @@
 @import '../../../sass/variables'
+@import '../../../sass/templates'
 
 .text
-  font-family: 'DM Sans', sans-serif
-  font-size: $text-size
-  letter-spacing: -0.02em
-  font-weight: 400
-
-  &._light
-    color: $colors-text-secondary
-  &._dark
-    color: $darkColors-text-secondary
+  @extend %text

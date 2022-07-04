@@ -8,6 +8,7 @@ import sass from './SideMenu.module.sass'
 import { routes } from 'routes'
 import UIIcon from 'components/UI/icon/Icon'
 import { faCookieBite } from '@fortawesome/free-solid-svg-icons'
+import { AppTitleOrder } from 'types/AppTheme.types'
 
 const SideMenu: FC<PropsWithChildren<{}>> = ({ children }) => {
   const location = useLocation()
@@ -15,7 +16,7 @@ const SideMenu: FC<PropsWithChildren<{}>> = ({ children }) => {
 
   return (
     <div className={classNames(sass['side-menu'], themeClasses)}>
-      <UITitle order={1} className={sass['side-menu__title']}>
+      <UITitle order={AppTitleOrder.H1} className={sass['side-menu__title']}>
         <UIIcon icon={faCookieBite} active style={{marginRight: 10}}/>
         MY<span style={{ fontWeight: 400 }}>AGILE</span>
       </UITitle>

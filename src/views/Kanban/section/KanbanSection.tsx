@@ -22,10 +22,16 @@ const KanbanSection: FC<PropsWithChildren<KanbanSectionProps>> = ({
   return (
     <div className={classNames(sass['section'], themeCLasses)}>
       <div className={classNames(sass['section__header'])}>
-        <UITitle size={AppTitleSize.M} order={AppTitleOrder.H2}>{firstWordToUpperCase(type)}</UITitle>
-        <UIButton grey style={{padding: '5px 45px'}}><UIIcon icon={faPlus} active /></UIButton>
+        <UITitle size={AppTitleSize.M} order={AppTitleOrder.H2}>
+          {firstWordToUpperCase(type)}
+        </UITitle>
+        <UIButton grey style={{ padding: '5px 45px' }}>
+          <UIIcon icon={faPlus} active />
+        </UIButton>
       </div>
-      <div className={sass['section__content']}>{children}</div>
+      <div className={classNames(sass['section__content'], themeCLasses)}>
+        {children}
+      </div>
     </div>
   )
 }

@@ -57,11 +57,11 @@ $z-max: 10
 
   &._light
     &::-webkit-scrollbar-thumb
-      background-color: $colors-background-primary
+      background-color: darken($colors-background-primary, 10)
         
   &._dark
     &::-webkit-scrollbar-thumb
-      background-color: $darkColors-background-primary
+      background-color: lighten($darkColors-background-primary, 10)
   
   &::-webkit-scrollbar-track
     max-height: 50%

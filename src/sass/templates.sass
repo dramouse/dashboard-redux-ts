@@ -1,0 +1,53 @@
+@import './variables'
+  
+%title
+  font-family: 'DM Sans', sans-serif
+  font-weight: 700
+  font-size: $text-title-size
+
+  &._light
+    color: $colors-text-primary
+
+  &._dark
+    color: $darkColors-text-primary
+
+%button
+  font-family: 'DM Sans', sans-serif
+  padding: 5px 76px
+  font-size: $text-size
+  border-radius: 10px
+  font-weight: 500
+  cursor: pointer
+
+  &._light 
+    background-color: $colors-accent
+    color: $darkColors-text-button
+    &:hover
+      background-color: lighten($colors-accent, 5)
+
+  &._dark 
+    background-color: $darkColors-accent
+    color: $colors-text-button
+    &:hover
+      background-color: lighten($darkColors-accent, 5)
+
+  &._grey._light
+    background-color: $colors-background-darker
+    &:hover
+      background-color: darken($colors-background-darker, 5)
+
+  &._grey._dark
+    background-color: $darkColors-background-darker
+    &:hover
+      background-color: lighten($darkColors-background-darker, 5)
+
+%text
+  font-family: 'DM Sans', sans-serif
+  font-size: $text-size
+  letter-spacing: -0.02em
+  font-weight: 400
+
+  &._light
+    color: $colors-text-secondary
+  &._dark
+    color: $darkColors-text-secondary

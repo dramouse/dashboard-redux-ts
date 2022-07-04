@@ -1,9 +1,13 @@
 @import '../../../sass/variables'
+@import '../../../sass/templates'
 
 .section
-  max-height: 100%
-  padding: 20px
+  height: 100%
+  padding: 20px 0 20px 20px
   border-radius: 20px
+  display: flex
+  flex-direction: column
+  position: relative
 
   &._light
     background-color: $colors-background-primary
@@ -16,8 +20,14 @@
     display: flex
     justify-content: space-between
     margin-bottom: 30px
+    padding-right: 20px
   
+  // Если этот код кто-то смотрит из потенциальных работодателей,
+  // то приношу извенения за этот костыль, но по иному тут ломается height: 100%
   &__content
+    position: absolute
+    top: 60px
+    max-height: 87%
+    padding-right: 15px
     overflow-y: scroll
-    height: 100%
     @extend %custom-scrollbar

@@ -2,16 +2,14 @@
   "kanban": [
     {
       "id": 123123,
-      "title": "sdfdsdfsdf",
-      "description": "sdscdfd",
+      "title": "Your first task",
+      "description": "Create new task and change its section and status to 'Done'",
       "img": null,
       "status": "pending",
       "section": "backlog",
       "created": "23-02-2022",
       "done": "26-02-2022",
-      "executors": [
-        11
-      ]
+      "executors": [11]
     }
   ],
   "users": [
@@ -24,16 +22,14 @@
       "position": "React developer",
       "department": "Отдел Web-разработки",
       "activity": "25-02-2022 13:34",
-      "tasks": [
-        123123
-      ]
+      "tasks": [123123]
     }
   ],
   "notifications": [
     {
       "id": "112jkq",
       "text": "Welcome! Check 'Usage' page to see some usage guide",
-      "closed": true,
+      "closed": false,
       "applyText": "Hello!",
       "date": "now"
     }

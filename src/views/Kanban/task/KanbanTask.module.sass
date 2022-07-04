@@ -1,0 +1,64 @@
+@import '../../../sass/variables'
+
+.task
+  width: 100%
+  padding: 20px 20px 10px 20px
+  border-radius: 15px
+  
+  &._light
+    background-color: $colors-background-darker
+
+  &._dark
+    background-color: $darkColors-background-darker
+
+  &__header
+    display: grid
+    grid-template-columns: 90% 10%
+    margin-bottom: 10px
+
+  &__edit-btn
+    background: transparent
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    border-radius: 50%
+
+  &__description
+    margin-bottom: 25px
+
+  &__controls
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__control-btn
+    background: transparent
+    cursor: pointer
+    font-size: 16px
+    &:not(:last-child)
+      margin-right: 10px
+
+  &__status-bar
+    padding: 5px 10px
+    color: white
+    border-radius: 15px
+    font-size: 14px
+
+    &._light._pending
+      background-color: $colors-status-yellow
+    &._light._updates
+      background-color: $colors-status-blue
+    &._light._errors
+      background-color: $colors-status-red
+    &._light._done
+      background-color: $colors-status-green
+
+    &._dark._pending
+      background-color: $darkColors-status-yellow
+    &._dark._updates
+      background-color: $darkColors-status-blue
+    &._dark._errors
+      background-color: $darkColors-status-red
+    &._dark._done
+      background-color: $darkColors-status-green
