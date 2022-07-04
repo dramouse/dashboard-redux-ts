@@ -1,5 +1,14 @@
-type TaskStatus = 'pending' | 'updates' | 'errors' | 'done'
-type TaskSection = 'backlog' | 'progress' | 'done'
+export enum TaskStatus {
+  PENDING = 'pending',
+  UPDATES = 'updates',
+  ERRORS = 'errors',
+  DONE = 'done'
+}
+export enum TaskSection {
+  BACKLOG = 'backlog',
+  PROGRESS = 'progress',
+  DONE = 'done'
+}
 
 export const BASE_URL = 'http://localhost:3001'
 
@@ -42,4 +51,5 @@ export interface INotification {
   text: string
   closed: boolean
   applyText?: string
+  date: string
 }

@@ -2,9 +2,10 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import themeReducer from './theme/theme.slice'
 import notificationsReducer from './notifications/notifications.slice'
+import kanbanReducer from './kanban/kanban.slice'
 
 export const store = configureStore({
-  reducer: { themeReducer, notificationsReducer },
+  reducer: { themeReducer, notificationsReducer, kanbanReducer },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: (defMW) => defMW(),
 })

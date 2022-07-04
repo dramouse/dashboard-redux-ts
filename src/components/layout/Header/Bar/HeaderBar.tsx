@@ -1,10 +1,9 @@
-import { faBell, faCircleInfo, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { faCircleInfo, faMoon } from '@fortawesome/free-solid-svg-icons'
 import classNames from 'classnames'
-import { UIButton, UIText } from 'components/UI'
 import UIIcon from 'components/UI/icon/Icon'
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from 'store'
-import { fetchNotifications } from 'store/notifications/notifications.actions'
+import { addNotification, fetchNotifications } from 'store/notifications/notifications.actions'
 import { toggleTheme } from 'store/theme/theme.slice'
 import { AppTheme } from 'types/AppTheme.types'
 import { useAppTheme, useThemeClassName } from 'utils'
@@ -26,7 +25,7 @@ const HeaderBar: FC = () => {
 
   useEffect(() => {
     dispatch(fetchNotifications())
-  }, [])
+  }, [dispatch])
 
   return (
     <div className={classNames(sass['header-bar'], themeClasses)}>
@@ -38,13 +37,13 @@ const HeaderBar: FC = () => {
           active={theme === AppTheme.DARK}
         />
       </button>
-      <button className={sass['header-bar__btn']}>
+      {/* <button onClick={addNote} className={sass['header-bar__btn']}>
         <UIIcon
           icon={faCircleInfo}
           style={{ fontSize: '18px' }}
           active={false}
         />
-      </button>
+      </button> */}
     </div>
   )
 }

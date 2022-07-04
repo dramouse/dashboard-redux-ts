@@ -1,8 +1,10 @@
 // Background colors
 $colors-background-primary: white
 $colors-background-secondary: #F4F7FE
+$colors-background-darker: #F4F7FE
 $darkColors-background-primary: #111C44
 $darkColors-background-secondary: #0B1437
+$darkColors-background-darker: #1B254B
 
 // Text colors
 $colors-text-primary: #2B3674
@@ -37,4 +39,30 @@ $transition-normal: 0.2s all ease-in-out
 
 // Standart text parameters
 $text-size: 16px
+$text-title-size: 24px
 $text-height: 26px
+
+// Z-index system
+$z-max: 10
+
+// Кастомный скроллбар адаптирующийся под тему приложения
+%custom-scrollbar
+  &::-webkit-scrollbar 
+    width: 6px
+    max-height: 50%
+    height: 50%
+
+  &::-webkit-scrollbar-thumb
+    border-radius: 15px
+
+  &._light
+    &::-webkit-scrollbar-thumb
+      background-color: $colors-background-primary
+        
+  &._dark
+    &::-webkit-scrollbar-thumb
+      background-color: $darkColors-background-primary
+  
+  &::-webkit-scrollbar-track
+    max-height: 50%
+    height: 50%

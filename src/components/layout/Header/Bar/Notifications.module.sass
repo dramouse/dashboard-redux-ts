@@ -8,8 +8,22 @@
     background-color: transparent
     cursor: pointer
 
+  &__not-seen
+    position: absolute
+    top: 10px
+    right: 0
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    background-color: $colors-status-red
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
+
   &__window
     position: absolute
+    z-index: $z-max
     opacity: 0
     pointer-events: none
     top: 75%
@@ -35,6 +49,7 @@
     overflow-y: scroll
     background-color: transparent
     padding-right: 15px
+    @extend %custom-scrollbar
   
   &__item
     padding: 10px
@@ -49,7 +64,7 @@
     
     &._dark
       background-color: $darkColors-background-primary
-  
+
   &__status
     display: flex
     width: 100%

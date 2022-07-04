@@ -31,15 +31,11 @@
   ],
   "notifications": [
     {
-      "id": "112jkqwdj",
-      "text": "Hello notification!",
-      "closed": false,
-      "applyText": "Hello!"
-    },
-    {
-      "id": "91fnc28yff",
-      "text": "Notification without apply text",
-      "closed": false
+      "id": "112jkq",
+      "text": "Welcome! Check 'Usage' page to see some usage guide",
+      "closed": true,
+      "applyText": "Hello!",
+      "date": "now"
     }
   ]
 }

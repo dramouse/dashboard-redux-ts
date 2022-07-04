@@ -1,0 +1,23 @@
+@import '../../../sass/variables'
+
+.section
+  max-height: 100%
+  padding: 20px
+  border-radius: 20px
+
+  &._light
+    background-color: $colors-background-primary
+    box-shadow: 0px 5px 10px rgba(112, 144, 176, 0.12)
+
+  &._dark
+    background-color: $darkColors-background-primary
+
+  &__header
+    display: flex
+    justify-content: space-between
+    margin-bottom: 30px
+  
+  &__content
+    overflow-y: scroll
+    height: 100%
+    @extend %custom-scrollbar

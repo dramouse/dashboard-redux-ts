@@ -4,4 +4,5 @@ export interface UIButtonProps {
   onClick?: () => void
   style?: CSSProperties
   stretch?: boolean
+  grey?:boolean
 }

@@ -10,7 +10,7 @@ const Header: FC = () => {
   const relatedRoute = routes.find(item => item.path === location.pathname)
   return (
     <header className={sass['header']}>
-      <UITitle order={1} style={{display: 'flex', alignItems: 'center'}}>
+      <UITitle size={32} order={1} style={{display: 'flex', alignItems: 'center'}}>
         {relatedRoute?.caption || 'Not found'}
       </UITitle>
       <HeaderBar/>

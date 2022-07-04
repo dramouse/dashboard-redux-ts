@@ -1,6 +1,6 @@
 import {
+  faCircleQuestion,
   faClockRotateLeft,
-  faHouse,
   faTableColumns,
   faUsers,
   IconDefinition,
@@ -17,7 +17,8 @@ enum Pages {
   STAT = 'Statistics',
   TEAM = 'Team',
   DASH = 'Dashboard',
-  HISTORY = 'History'
+  HISTORY = 'History',
+  USAGE = 'Usage'
 }
 
 export const routes: IRoute[] = [
@@ -40,5 +41,10 @@ export const routes: IRoute[] = [
     path: '/history',
     caption: Pages.HISTORY,
     icon: faClockRotateLeft
+  },
+  {
+    path: '/usage',
+    caption: Pages.USAGE,
+    icon: faCircleQuestion
   }
 ]

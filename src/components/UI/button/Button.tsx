@@ -9,21 +9,24 @@ import { useThemeClassName } from 'utils'
  * @param {boolean} stretch - для растягивания кнопки на всю ширину контейнера
  * @param {Function} onClick - пробросить колбэк для события click
  * @param {CSSProperties} style - можно прокинуть инлайн стили
+ * @param {boolean} grey - кнопка серого стиля (как "добавить" в канбан доске)
  */
 const UIButton: FC<PropsWithChildren<UIButtonProps>> = ({
   onClick,
   stretch = false,
   style = {},
   children,
+  grey,
 }) => {
   const themeClasses = useThemeClassName(sass['_light'], sass['_dark'])
+  const greyStyle = grey ? sass['_grey'] : ''
   const inlineStyles: CSSProperties = { ...style }
   if (stretch) inlineStyles.width = '100%'
 
   return (
     <button
       onClick={onClick}
-      className={classNames(sass['button'], themeClasses)}
+      className={classNames(sass['button'], themeClasses, greyStyle)}
       style={inlineStyles}
     >
       {children}

@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { INotification } from 'types/Server.types'
-import { fetchNotifications } from './notifications.actions'
+import { addNotification, fetchNotifications } from './notifications.actions'
 
 interface NotificationsState {
   notSeen: number
   list: INotification[]
-  notificationsLoaded: boolean
+  notificationsLoading: boolean
 }
 
 const initialState: NotificationsState = {
   notSeen: 0,
   list: [],
-  notificationsLoaded: false,
+  notificationsLoading: false,
 }
 
 const notificationsSlice = createSlice({
@@ -19,10 +19,10 @@ const notificationsSlice = createSlice({
   initialState,
   reducers: {
     setNotificationsLoading: (state) => {
-      state.notificationsLoaded = false
+      state.notificationsLoading = true
     },
     setNotificationsLoaded: (state) => {
-      state.notificationsLoaded = true
+      state.notificationsLoading = false
     },
   },
   extraReducers(builder) {
@@ -33,14 +33,21 @@ const notificationsSlice = createSlice({
           (note: INotification) => !note.closed
         )
         state.notSeen = notSeenList.length
-        state.notificationsLoaded = true
+        state.notificationsLoading = false
       })
       .addCase(fetchNotifications.rejected, (state) => {
-        state.notificationsLoaded = true
+        state.notificationsLoading = false
         throw new Error('Something went wrong while fetching notifications')
       })
       .addCase(fetchNotifications.pending, (state) => {
-        state.notificationsLoaded = false
+        state.notificationsLoading = true
+      })
+      .addCase(addNotification.fulfilled, (state, action) => {
+        state.list.push(action.payload)
+        state.notSeen++
+      })
+      .addCase(addNotification.rejected, (state, action) => {
+        throw new Error(`Error occured while creating notification. Message: ${action.payload}`)
       })
   },
 })

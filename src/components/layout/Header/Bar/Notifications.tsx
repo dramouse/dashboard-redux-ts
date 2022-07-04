@@ -1,14 +1,18 @@
-import { faBell, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faBell } from '@fortawesome/free-solid-svg-icons'
 import classNames from 'classnames'
-import { UIButton, UIText } from 'components/UI'
+import { UIButton, UIText, UITitle } from 'components/UI'
 import UIIcon from 'components/UI/icon/Icon'
-import { FC, useState } from 'react'
+import PageLoader from 'components/UI/page-loader/PageLoader'
+import { FC, useRef, useState } from 'react'
 import { useAppDispatch, useAppSelector } from 'store'
 import {
   fetchNotifications,
   NOTIFICATIONS_PREFIX,
 } from 'store/notifications/notifications.actions'
-import { setNotificationsLoading } from 'store/notifications/notifications.slice'
+import {
+  setNotificationsLoaded,
+  setNotificationsLoading,
+} from 'store/notifications/notifications.slice'
 import { BASE_URL, INotification } from 'types/Server.types'
 import { useThemeClassName } from 'utils'
 import sass from './Notifications.module.sass'
@@ -20,17 +24,22 @@ interface HeaderBarNotificationsProps {
 const HeaderBarNotifications: FC<HeaderBarNotificationsProps> = ({
   list = [],
 }) => {
+  const notificationsWindow = useRef(null)
   const themeClasses = useThemeClassName(sass['_light'], sass['_dark'])
   const [showNotifications, setShowNotifications] = useState(false)
-  const dispatch = useAppDispatch()
-  const notificationsLoaded = useAppSelector(
-    (state) => state.notificationsReducer.notificationsLoaded
-  )
-  const notSeenNotificationsCount = useAppSelector(
+  const notSeenCount = useAppSelector(
     (state) => state.notificationsReducer.notSeen
   )
+  const notificationsLoading = useAppSelector(
+    (state) => state.notificationsReducer.notificationsLoading
+  )
+
+  const dispatch = useAppDispatch()
 
   const toggleNotifications = () => {
+    if (!showNotifications) {
+      dispatch(fetchNotifications())
+    } 
     setShowNotifications((state) => !state)
   }
 
@@ -47,18 +56,13 @@ const HeaderBarNotifications: FC<HeaderBarNotificationsProps> = ({
         dispatch(fetchNotifications())
       })
       .catch((err) => {
+        dispatch(setNotificationsLoaded())
         throw new Error(`Error occured. Message: ${err}`)
       })
   }
 
   const renderNotifications = (flag: boolean, list: INotification[] = []) => {
-    if (!flag) {
-      return (
-        <div className={sass['notifications__status']}>
-          <UIIcon icon={faSpinner} spin active />
-        </div>
-      )
-    }
+    if (!flag) return <PageLoader />
 
     const notClosedNotificationsList = list.filter((note) => !note.closed)
 
@@ -72,12 +76,15 @@ const HeaderBarNotifications: FC<HeaderBarNotificationsProps> = ({
 
     return (
       <>
-        {notClosedNotificationsList.map((note) => (
+        {notClosedNotificationsList.reverse().map((note) => (
           <div
             key={note.id}
             className={classNames(sass['notifications__item'], themeClasses)}
           >
-            <UIText style={{ marginBottom: 5 }}>{note.text}</UIText>
+            <UIText size={10} style={{ textAlign: 'right' }}>
+              {note.date}
+            </UIText>
+            <UIText style={{ marginBottom: 10 }}>{note.text}</UIText>
             <UIButton
               onClick={() => handleNotificationApply({ ...note, closed: true })}
               stretch
@@ -102,7 +109,17 @@ const HeaderBarNotifications: FC<HeaderBarNotificationsProps> = ({
           active={showNotifications}
         />
       </button>
+      {notSeenCount ? (
+        <div className={sass['notifications__not-seen']}>
+          <UITitle size={10} style={{ color: 'white' }}>
+            {notSeenCount}
+          </UITitle>
+        </div>
+      ) : (
+        ''
+      )}
       <div
+        ref={notificationsWindow}
         className={classNames(
           sass['notifications__window'],
           themeClasses,
@@ -112,7 +129,7 @@ const HeaderBarNotifications: FC<HeaderBarNotificationsProps> = ({
         <div
           className={classNames(sass['notifications__content'], themeClasses)}
         >
-          {renderNotifications(notificationsLoaded, list)}
+          {renderNotifications(!notificationsLoading, list)}
         </div>
       </div>
     </div>
