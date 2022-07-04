@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { UIButton, UITitle } from 'components/UI'
 import UIIcon from 'components/UI/icon/Icon'
 import { FC, PropsWithChildren } from 'react'
+import { AppTitleOrder, AppTitleSize } from 'types/AppTheme.types'
 import { TaskSection } from 'types/Server.types'
 import { useThemeClassName } from 'utils'
 import { firstWordToUpperCase } from 'utils/helpers/FirstWordToUpperCase.helper'
@@ -21,7 +22,7 @@ const KanbanSection: FC<PropsWithChildren<KanbanSectionProps>> = ({
   return (
     <div className={classNames(sass['section'], themeCLasses)}>
       <div className={classNames(sass['section__header'])}>
-        <UITitle size={20} order={3}>{firstWordToUpperCase(type)}</UITitle>
+        <UITitle size={AppTitleSize.M} order={AppTitleOrder.H2}>{firstWordToUpperCase(type)}</UITitle>
         <UIButton grey style={{padding: '5px 45px'}}><UIIcon icon={faPlus} active /></UIButton>
       </div>
       <div className={sass['section__content']}>{children}</div>

@@ -1,5 +1,6 @@
 import { UITitle } from 'components/UI'
 import { FC } from 'react'
+import { AppTitleOrder, AppTitleSize } from 'types/AppTheme.types'
 import { TaskStatus } from 'types/Server.types'
 
 interface KanbanTaskProps {
@@ -15,11 +16,13 @@ const KanbanTask: FC<KanbanTaskProps> = ({
   title,
   description,
   executors,
-  status
+  status,
 }) => {
   return (
     <div>
-      <UITitle size={18}>{title}</UITitle>
+      <UITitle size={AppTitleSize.S} order={AppTitleOrder.H3}>
+        {title}
+      </UITitle>
     </div>
   )
 }

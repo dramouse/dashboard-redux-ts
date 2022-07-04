@@ -6,6 +6,7 @@ import { useThemeClassName } from 'utils'
 import { UITitle } from 'components/UI'
 import UIIcon from 'components/UI/icon/Icon'
 import sass from './SideMenuLink.module.sass'
+import { AppTitleOrder, AppTitleSize } from 'types/AppTheme.types'
 
 export interface SideMenuLinkProps {
   icon: IconDefinition
@@ -28,7 +29,7 @@ const SideMenuLink: FC<SideMenuLinkProps> = ({ icon, caption, to, active }) => {
         )}
       >
         <UIIcon icon={icon} style={{ marginRight: '12px' }} active={active} />
-        <UITitle size={16}>{caption}</UITitle>
+        <UITitle size={AppTitleSize.XS} order={AppTitleOrder.H3}>{caption}</UITitle>
       </Link>
     </li>
   )

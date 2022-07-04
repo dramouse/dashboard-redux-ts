@@ -13,6 +13,7 @@ import {
   setNotificationsLoaded,
   setNotificationsLoading,
 } from 'store/notifications/notifications.slice'
+import { AppTitleOrder, AppTitleSize } from 'types/AppTheme.types'
 import { BASE_URL, INotification } from 'types/Server.types'
 import { useThemeClassName } from 'utils'
 import sass from './Notifications.module.sass'
@@ -39,7 +40,7 @@ const HeaderBarNotifications: FC<HeaderBarNotificationsProps> = ({
   const toggleNotifications = () => {
     if (!showNotifications) {
       dispatch(fetchNotifications())
-    } 
+    }
     setShowNotifications((state) => !state)
   }
 
@@ -111,7 +112,11 @@ const HeaderBarNotifications: FC<HeaderBarNotificationsProps> = ({
       </button>
       {notSeenCount ? (
         <div className={sass['notifications__not-seen']}>
-          <UITitle size={10} style={{ color: 'white' }}>
+          <UITitle
+            size={AppTitleSize.ICONIC}
+            order={AppTitleOrder.H3}
+            style={{ color: 'white' }}
+          >
             {notSeenCount}
           </UITitle>
         </div>
