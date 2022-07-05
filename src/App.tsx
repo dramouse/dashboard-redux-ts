@@ -7,6 +7,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { UITitle } from 'components/UI'
 import Page404 from 'views/404/404'
 import KanbanView from 'views/Kanban/Kanban.view'
+import { PagePath } from 'routes'
 
 const App: FC = () => {
   const themeClasses = useThemeClassName(sass['_light'], sass['_dark'])
@@ -16,9 +17,8 @@ const App: FC = () => {
       <SideMenuWrapper>
         <Routes>
           <Route path='/' element={<Navigate to='/kanban' replace />} />
-          <Route path='/kanban' element={<KanbanView/>} />
-          <Route path='/dashboard' element={<UITitle>dashboard</UITitle>} />
-          <Route path='/history' element={<UITitle>history</UITitle>} />
+          <Route path={PagePath.KANABN} element={<KanbanView/>} />
+          <Route path={PagePath.HISTORY} element={<UITitle>history</UITitle>} />
           <Route path='*' element={<Page404 />} />
         </Routes>
       </SideMenuWrapper>

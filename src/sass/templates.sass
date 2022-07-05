@@ -51,3 +51,26 @@
     color: $colors-text-secondary
   &._dark
     color: $darkColors-text-secondary
+
+
+// Кастомный скроллбар адаптирующийся под тему приложения
+%custom-scrollbar
+  &::-webkit-scrollbar 
+    width: 6px
+    max-height: 50%
+    height: 50%
+
+  &::-webkit-scrollbar-thumb
+    border-radius: 15px
+
+  &._light
+    &::-webkit-scrollbar-thumb
+      background-color: darken($colors-background-primary, 10)
+        
+  &._dark
+    &::-webkit-scrollbar-thumb
+      background-color: lighten($darkColors-background-primary, 10)
+  
+  &::-webkit-scrollbar-track
+    max-height: 50%
+    height: 50%

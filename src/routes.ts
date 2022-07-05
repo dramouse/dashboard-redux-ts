@@ -12,13 +12,19 @@ interface IRoute {
   icon: IconDefinition
 }
 
-enum Pages {
+enum PageTitle {
   KANBAN = 'Kanban',
   STAT = 'Statistics',
   TEAM = 'Team',
-  DASH = 'Dashboard',
   HISTORY = 'History',
   USAGE = 'Usage'
+}
+
+export enum PagePath {
+  KANABN = '/kanban',
+  HISTORY = '/history',
+  STAT = '/stat',
+  USAGE = '/usage',
 }
 
 export const routes: IRoute[] = [
@@ -28,8 +34,8 @@ export const routes: IRoute[] = [
   //   icon: faUsers
   // },
   {
-    path: '/kanban',
-    caption: Pages.KANBAN,
+    path: PagePath.KANABN,
+    caption: PageTitle.KANBAN,
     icon: faTableColumns,
   },
   // {
@@ -38,13 +44,13 @@ export const routes: IRoute[] = [
   //   icon: faHouse,
   // },
   {
-    path: '/history',
-    caption: Pages.HISTORY,
+    path: PagePath.HISTORY,
+    caption: PageTitle.HISTORY,
     icon: faClockRotateLeft
   },
   {
-    path: '/usage',
-    caption: Pages.USAGE,
+    path: PagePath.USAGE,
+    caption: PageTitle.USAGE,
     icon: faCircleQuestion
   }
 ]
