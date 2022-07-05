@@ -6,7 +6,7 @@ import { FC, PropsWithChildren } from 'react'
 import { AppTitleOrder, AppTitleSize } from 'types/AppTheme.types'
 import { TaskSection } from 'types/Server.types'
 import { useThemeClassName } from 'utils'
-import { firstWordToUpperCase } from 'utils/helpers/FirstWordToUpperCase.helper'
+import { firstWordToUpperCase } from 'utils/helpers/firstWordToUpperCase.helper'
 import sass from './KanbanSection.module.sass'
 
 interface KanbanSectionProps {

@@ -10,6 +10,7 @@ import { useThemeClassName } from 'utils'
  * @param {Function} onClick - пробросить колбэк для события click
  * @param {CSSProperties} style - можно прокинуть инлайн стили
  * @param {boolean} grey - кнопка серого стиля (как "добавить" в канбан доске)
+ * @param {number} paddingX - можно задать свой паддинг по X
  */
 const UIButton: FC<PropsWithChildren<UIButtonProps>> = ({
   onClick,
@@ -17,10 +18,12 @@ const UIButton: FC<PropsWithChildren<UIButtonProps>> = ({
   style = {},
   children,
   grey,
+  paddingX,
 }) => {
   const themeClasses = useThemeClassName(sass['_light'], sass['_dark'])
   const greyStyle = grey ? sass['_grey'] : ''
   const inlineStyles: CSSProperties = { ...style }
+  if (paddingX) inlineStyles.padding = `5px ${paddingX}px`
   if (stretch) inlineStyles.width = '100%'
 
   return (

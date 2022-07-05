@@ -1,4 +1,7 @@
+import { UIText } from 'components/UI'
 import { FC, PropsWithChildren } from 'react'
+import { useAppDispatch } from 'store'
+import { setModalContent } from 'store/modal/modal.slice'
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import SideMenu from './Menu/SideMenu'

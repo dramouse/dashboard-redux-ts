@@ -1,4 +1,4 @@
-import { TaskSection } from "types/Server.types";
+import { TaskSection } from 'types/Server.types'
 
 export const getNextTaskSection = (section: TaskSection) => {
   switch (section) {

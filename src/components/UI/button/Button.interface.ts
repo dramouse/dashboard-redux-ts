@@ -5,4 +5,5 @@ export interface UIButtonProps {
   style?: CSSProperties
   stretch?: boolean
   grey?:boolean
+  paddingX?: number
 }
